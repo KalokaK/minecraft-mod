@@ -14,7 +14,6 @@ fun init() {
 
     registerItems()
 
-    println("init main still works")
+    LOGGER.info("init main still works")
 }
 
-class Esuts
