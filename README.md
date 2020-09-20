@@ -1,2 +1,2 @@
 # minecraft-mod
-literally just that ¯\\_(ツ)_/¯
+literally just that ¯\\\_(ツ)\_/¯
