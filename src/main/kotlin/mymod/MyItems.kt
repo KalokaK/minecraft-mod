@@ -16,23 +16,12 @@ val ESTUS_FLASK = EstusFlask(estusSettings)
 
 class EstusFlask(settings: Settings): Item(settings) {
     override fun use(world: World?, user: PlayerEntity?, hand: Hand?): TypedActionResult<ItemStack> {
-        println("use on relaease estus is being called")
         user?.heal(10.0F)
         user?.itemCooldownManager?.set(this, 20)
+        user!!.getStackInHand(hand).decrement(1)
         return super.use(world, user, hand)
     }
-    override fun finishUsing(stack: ItemStack?, world: World?, user: LivingEntity?): ItemStack {
-        println("use on relaease estus is being called")
-        user?.heal(10.0F)
-        if (user is PlayerEntity) {
-            (user as PlayerEntity).itemCooldownManager.set(this, 20)
-        }
 
-        return super.finishUsing(stack, world, user)
-    }
-    override fun isFood(): Boolean {
-        return false
-    }
     override fun isUsedOnRelease(stack: ItemStack?): Boolean {
         return true
     }

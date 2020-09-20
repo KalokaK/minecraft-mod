@@ -6,6 +6,7 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
+
 @Suppress("unused")
 fun init() {
     // This code runs as soon as Minecraft is in a mod-load-ready state.
@@ -16,5 +17,3 @@ fun init() {
 
     println("init main still works")
 }
-
-class Esuts
