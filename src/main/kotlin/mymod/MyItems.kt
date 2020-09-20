@@ -16,28 +16,28 @@ import net.minecraft.util.UseAction
 import net.minecraft.util.registry.Registry
 import net.minecraft.world.World
 
-val estusSettings = Item.Settings().group(ItemGroup.COMBAT).maxCount(10)
+val estusSettings = Item.Settings().apply {
+    group(ItemGroup.COMBAT)
+    maxCount(10)
+}
 val ESTUS_FLASK = EstusFlask(estusSettings)
 
 class EstusFlask(settings: Settings): Item(settings) {
 
     override fun finishUsing(stack: ItemStack?, world: World?, user: LivingEntity?): ItemStack {
-        val playerEntity = if (user is PlayerEntity) user else null
-        if (playerEntity is ServerPlayerEntity) {
-            Criteria.CONSUME_ITEM.trigger(playerEntity as ServerPlayerEntity?, stack)
+        if (user is ServerPlayerEntity) {
+            Criteria.CONSUME_ITEM.trigger(user, stack)
         }
 
-        if (!world!!.isClient()){
-            user?.heal(10.0F)
-            if (user is PlayerEntity) (user as PlayerEntity).itemCooldownManager?.set(this, 20)
-
-            if (playerEntity != null) {
-                playerEntity.incrementStat(Stats.USED.getOrCreateStat(this))
-                if (!playerEntity.abilities.creativeMode) {
+        if (!world!!.isClient() && user != null) {
+            user.heal(10.0F)
+            if (user is PlayerEntity) user.apply {
+                itemCooldownManager.set(this@EstusFlask, 20)
+                incrementStat(Stats.USED.getOrCreateStat(this@EstusFlask))
+                if (abilities.creativeMode) {
                     stack!!.decrement(1)
                 }
             }
-
         }
         return super.finishUsing(stack, world, user)
     }
