@@ -16,7 +16,10 @@ minecraft {
 
 
 repositories {
-    maven { url = "http://maven.fabricmc.net/" }
+    maven {
+        url = "http://maven.fabricmc.net/"
+        name = "Fabric"
+    }
 }
 
 dependencies {

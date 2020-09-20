@@ -1,6 +1,10 @@
-package net.fabricmc.example
+package mymod
 
 // For support join https://discord.gg/v6v4pMv
+import net.minecraft.item.Item
+import net.minecraft.item.ItemGroup
+import net.minecraft.util.Identifier
+import net.minecraft.util.registry.Registry
 
 @Suppress("unused")
 fun init() {
@@ -8,6 +12,9 @@ fun init() {
     // However, some things (like resources) may still be uninitialized.
     // Proceed with mild caution.
 
-    println("Hello Fabric world!")
+    registerItems()
+
+    println("init main still works")
 }
 
+class Esuts
