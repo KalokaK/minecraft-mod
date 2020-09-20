@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " W ",
+    "WRW",
+    " W "
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:soul_fire_base_blocks"
+    },
+    "R": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "mymod:estus_flask",
+    "count": 10
+  }
+}

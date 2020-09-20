@@ -1,11 +1,7 @@
 package mymod
 
 // For support join https://discord.gg/v6v4pMv
-import net.minecraft.item.Item
-import net.minecraft.item.ItemGroup
-import net.minecraft.util.Identifier
-import net.minecraft.util.registry.Registry
-
+import mymod.items.registerItems
 
 @Suppress("unused")
 fun init() {

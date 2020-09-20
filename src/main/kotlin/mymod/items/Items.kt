@@ -1,10 +1,11 @@
-package mymod
+package mymod.items
 
 import net.minecraft.advancement.criterion.Criteria
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
+import mymod.init
 import net.minecraft.item.ItemStack
 import net.minecraft.item.ItemUsage
 import net.minecraft.server.network.ServerPlayerEntity
@@ -16,8 +17,13 @@ import net.minecraft.util.UseAction
 import net.minecraft.util.registry.Registry
 import net.minecraft.world.World
 
+/*The items. first create everything needed for an item instance, create an instance, then code
+* for the instance down below.
+*
+*
+* */
 val estusSettings = Item.Settings().apply {
-    group(ItemGroup.COMBAT)
+    group(MY_MOD_ITEMS)
     maxCount(10)
 }
 val ESTUS_FLASK = EstusFlask(estusSettings)
