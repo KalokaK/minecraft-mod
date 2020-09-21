@@ -27,6 +27,7 @@ val estusSettings = Item.Settings().apply {
     maxCount(10)
 }
 val ESTUS_FLASK = EstusFlask(estusSettings)
+val ESTUS_SHARD = Item(Item.Settings().group(MY_MOD_ITEMS).maxCount(16))
 
 class EstusFlask(settings: Settings): Item(settings) {
 
@@ -64,4 +65,5 @@ class EstusFlask(settings: Settings): Item(settings) {
 
 fun registerItems() {
     Registry.register(Registry.ITEM, Identifier("mymod", "estus_flask"), ESTUS_FLASK)
+    Registry.register(Registry.ITEM, Identifier("mymod", "estus_shard"), ESTUS_SHARD)
 }

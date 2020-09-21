@@ -13,5 +13,6 @@ val MY_MOD_ITEMS: ItemGroup = FabricItemGroupBuilder.create(Identifier("mymod", 
     icon { ItemStack(Items.NETHER_STAR) }
     appendApply {
         add(ItemStack(ESTUS_FLASK))
+        add(ItemStack(ESTUS_SHARD))
     }
 }.build()

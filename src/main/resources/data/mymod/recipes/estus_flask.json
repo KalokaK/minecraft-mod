@@ -7,10 +7,10 @@
   ],
   "key": {
     "W": {
-      "tag": "minecraft:soul_fire_base_blocks"
+      "item": "mymod:estus_shard"
     },
     "R": {
-      "item": "minecraft:nether_star"
+      "item": "minecraft:blaze_powder"
     }
   },
   "result": {
