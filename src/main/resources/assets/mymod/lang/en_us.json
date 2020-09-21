@@ -1,4 +1,4 @@
 {
-  "item.mymod.estus_flask" : "Estus Flask"
-
+  "item.mymod.estus_flask" : "Estus Flask",
+  "itemGroup.mymod.mymod" : "MyMod Items"
 }
